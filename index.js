@@ -94,7 +94,7 @@ app.get('/getpost/:id', (req, res) => {
 // update post
 app.get('/updatepost/:id', (req, res) => {
     // specify what you want to update
-    let newTitle = 'Updated Title';
+    let newTitle = 'Updated Main Title';
     
         let sql = `UPDATE post SET title = '${newTitle}' WHERE id = ${req.params.id}`;
     let query = db.query(sql, (err, result) =>{
@@ -104,7 +104,8 @@ app.get('/updatepost/:id', (req, res) => {
     });
 });
 
-// delete post
+// delete posts
+// just delete
 app.get('/deletepost/:id', (req, res) => {
     // specify what you want to update
     let newTitle = 'Updated Title';
@@ -128,4 +129,4 @@ app.listen('3000', () => {
 
 
 //  IMPORTANT NOTE:
-// ======= THIS IS ONLY PLAIN IMPLIMENTATION OF SQL WITH NODE EXPRESS 
+// ====== THIS IS ONLY PLAIN IMPLEMENTATION OF SQL WITH NODE EXPRESS 
