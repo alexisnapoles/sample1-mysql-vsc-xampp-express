@@ -9,7 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "mysql": "^2.18.1"
-  }
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "wax-on": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexisnapoles/sample1-mysql-vsc-xampp-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexisnapoles/sample1-mysql-vsc-xampp-express/issues"
+  },
+  "homepage": "https://github.com/alexisnapoles/sample1-mysql-vsc-xampp-express#readme"
 }
