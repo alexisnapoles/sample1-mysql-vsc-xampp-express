@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const hbs = require('hbs');
 const wax = require('wax-on');
+
 require('dotenv').config();
 
 // Create connection mysql
@@ -21,11 +22,13 @@ db.connect((err) => {
 });
 
 const app = express();
-// set view engine
-app.set('view engine', 'hbs');
+const port = process.env.PORT || 5000
+
 // set static folder w/ file name === public
 app.use(express.static('public'));
-// set up wax-on
+
+// set up wax-on: templating engine
+app.set('view engine', 'hbs');
 wax.on(hbs.handlebars);
 wax.setLayoutPath('./views/layouts');
 
@@ -48,8 +51,8 @@ async function main() {
 }
 main();
 
-app.listen('3000', () => {
-    console.log('server started on port 3000');
+app.listen(port, () => {
+    console.log(`server started on port ${port}`);
 });
 
 //  NOTE: on BUILDING ACTUAL APP

@@ -1,5 +1,28 @@
 {{#extends "base"}}
   {{#block "content"}}
     <h1>Welcome!</h1>
+    <table class="table table-bordered">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Dell Inspiron 14 7000</td>
+          <td>Laptop</td>
+          <td>Php 12000</td>
+          <td>
+              <a href="" type="button" class="btn btn-light btn-small"><i class="bi bi-plus-circle"></i>  Add to Cart</a>
+              <a href="" type="button" class="btn btn-light btn-small"><i class="bi bi-heart"></i>  Whishlist</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   {{/block}}
 {{/extends}}
