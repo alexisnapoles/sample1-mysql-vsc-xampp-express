@@ -40,9 +40,11 @@ app.use(express.urlencoded({
 
 // import ROUTES
 const landingRoutes = require('./routes/landing');
+const productsRoutes = require('./routes/products');
 
 async function main() {
     app.use('/', landingRoutes);
+    app.use('/products', productsRoutes);
     // test route
     // app.get('/', (req, res) => {
     //     res.send("It is ALIVEEAAH! ~")
