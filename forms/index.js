@@ -36,7 +36,7 @@ const createProductForm = function(categories, tags) {
         "price": fields.string({
             'required': true,
             'errorAfterField': true,
-            'validators': [validators.integer(), validators.min(0)]
+            'validators': [validators.digits(), validators.min(0)]
         }),
         "description": fields.string({
             'required': true,
