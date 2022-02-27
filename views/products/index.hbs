@@ -26,14 +26,12 @@
               {{this.description}}
             </td>
             <td>
-              <a href="" type="button" class="btn btn-light btn-small"><i
-                  class="bi bi-plus-circle"
-                ></i>
-                Add to Cart</a>
-              <a href="" type="button" class="btn btn-light btn-small"><i
-                  class="bi bi-heart"
-                ></i>
-                Whishlist</a>
+              <a href="/products/{{this.id}}/update" type="button" class="btn btn-success btn-small">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <a href="/products/{{this.id}}/delete" type="button" class="btn btn-danger btn-small">
+                <i class="bi bi-trash"></i>
+              </a>
             </td>
           </tr>
         {{/each}}
