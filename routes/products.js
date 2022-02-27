@@ -42,6 +42,11 @@ router.post('/create', async(req, res) => {
             // since this process is asyncrnous we need to put await to save
             await product.save();
             res.redirect('/products');
+        },
+        'error': async(form) => {
+            res.render('products/create', {
+                'form': form.toHTML(bootstrapField)
+            })
         }
     })
     // after creating route, add a form validator for erroneous inputs
