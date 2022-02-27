@@ -64,12 +64,12 @@ router.post('/create', async(req, res) => {
     // i.e. user enters alphabets or words for our price field
 });
 
-router.get('/:product_id/update', async function(req, res) {
+router.get('/:products_id/update', async function(req, res) {
     // const allCategories = await Category.fetchAll().map(function(category){
     //     return [ category.get('id'), category.get('name') ]
     // });
 
-    const productId = req.params.product_id;
+    const productId = req.params.products_id;
     const product = await getProductById(productId);
 
     const productForm = createProductForm();
@@ -84,9 +84,9 @@ router.get('/:product_id/update', async function(req, res) {
     })
 });
 
-router.post('/:product_id/update', async (req, res) => {
+router.post('/:products_id/update', async (req, res) => {
     const product = await Product.where({
-        'id': req.params.product_id
+        'id': req.params.products_id
     }).fetch({
         require: true,
         // withRealated: ['tags']
@@ -117,17 +117,17 @@ router.post('/:product_id/update', async (req, res) => {
     })
 });
 
-router.get('/:product_id/delete', async function(req, res){
-    const product = await getProductById(req.params.product_id);
+router.get('/:products_id/delete', async function(req, res){
+    const product = await getProductById(req.params.products_id);
     res.render('products/delete', {
         'product': product.toJSON()
     })
 });
 
-router.post('/:product_id/delete', async function(req, res){
-    const product = await getProductById(req.params.product_id);
+router.post('/:products_id/delete', async function(req, res){
+    const product = await getProductById(req.params.products_id);
     await product.destroy(); // same as MySQL command: DELETE FROM products where id = ?
-    res.redirect('/product')
+    res.redirect('/products')
 });
 
 module.exports = router;
